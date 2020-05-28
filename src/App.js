@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCity } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.state.cities[this.state.current].name}</h1>
+        <h1><FontAwesomeIcon icon={faCity} /> {this.state.cities[this.state.current].name}</h1>
         <h2>{this.state.cities[this.state.current].d}°C</h2>
         <h3>{this.state.cities[this.state.current].w}</h3>
 
