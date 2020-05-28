@@ -1,9 +1,22 @@
 import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCity } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
+  weathers = {
+    'sn': 'Snow',
+    'sl': 'Sleet',
+    'h': 'Hail',
+    't': 'Thunderstorm',
+    'hr': 'Heavy Rain',
+    'lr': 'Light Rain',
+    's': 'Showers',
+    'hc': 'Heavy Cloud',
+    'lc': 'Light Cloud',
+    'c': 'Clear',
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -24,19 +37,23 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1><FontAwesomeIcon icon={faCity} /> {this.state.cities[this.state.current].name}</h1>
-        <h2>{this.state.cities[this.state.current].d}°C</h2>
-        <h3>{this.state.cities[this.state.current].w}</h3>
+        <div className="weather-status">
+          <h1>{this.state.cities[this.state.current].name}</h1>
+          <h2>{this.state.cities[this.state.current].d}°C</h2>
+          <h3>{this.weathers[this.state.cities[this.state.current].w]}</h3>
+        </div>
 
         <div id="cities">
           {this.state.cities.map((each, index) => {
             return (
-              <button key={each.woeid} onClick={() => this.setCurrent(index)} display="inline">
-                <h3>{each.name}</h3>
-                <h5>{each.d}°C</h5>
+              <button key={each.woeid} className={each.w} onClick={() => this.setCurrent(index)}>
+                <span className="header">{each.name}</span>
+                <span className="secondary">{each.d}°C</span>
               </button>
             )
           })}
+          <button className="add"><FontAwesomeIcon icon={faPlusCircle} className="header" /></button>
+          <div className="gutter">&nbsp;</div>
         </div>
       </div>
     );

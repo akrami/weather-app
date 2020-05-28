@@ -6,12 +6,44 @@ div#cities {
     justify-content: flex-start;
     position: absolute;
     left: 0;
-    bottom: 0;
-    overflow: scroll;
+    bottom: 50px;
+    overflow-x: scroll;
 }
 
 #cities button {
     display: inline-block;
-    min-width: 200px;
-    margin: 5px;
+    margin: 5px 25px;
+    border: none;
+    text-align: left;
+    padding: 10px 25px;
+    border-radius: 15px;
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+#cities button.add {
+    min-width: 100px;
+    text-align: center;
+    color: #AAA;
+}
+
+#cities button:focus {
+    outline: none;
+}
+
+#cities button .header {
+    font-weight: bold;
+    font-size: 1.777em;
+    word-wrap: unset;
+}
+
+#cities button .secondary {
+    font-weight: normal;
+    font-size: 1.333em;
+    margin-left: 15px;
+}
+
+#cities .gutter {
+    min-width: 50px;
+    display: inline-block;
 }
