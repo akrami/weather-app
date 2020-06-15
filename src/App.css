@@ -19,6 +19,7 @@ div#cities {
     border-radius: 15px;
     background-color: #efefef;
     cursor: pointer;
+    overflow-wrap: unset;
 }
 
 #cities button.add {

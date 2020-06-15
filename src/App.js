@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import CountUp from 'react-countup';
+import TextTransition, { presets } from "react-text-transition";
 
 class App extends React.Component {
   weathers = {
@@ -37,9 +39,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div id="background" className={this.state.cities[this.state.current].w}></div>
         <div className="weather-status">
-          <h1>{this.state.cities[this.state.current].name}</h1>
-          <h2>{this.state.cities[this.state.current].d}°C</h2>
+          {/* <h1>{this.state.cities[this.state.current].name}</h1> */}
+          {/* <h2>{this.state.cities[this.state.current].d}°C</h2> */}
+          <h1><TextTransition text={this.state.cities[this.state.current].name} springConfig={presets.molasses}/></h1>
+          <h2><CountUp end={this.state.cities[this.state.current].d} />°C</h2>
           <h3>{this.weathers[this.state.cities[this.state.current].w]}</h3>
         </div>
 

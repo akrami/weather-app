@@ -37,3 +37,43 @@ small, .text_small {font-size: 0.75em;}
 code {
   font-family: monospace;
 }
+
+#background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+}
+
+#background.sn {
+  background-color: #F4F7F7;
+}
+#background.sl {
+  background-color: #E3F6F3;
+}
+#background.h {
+  background-color: #FAF0FE;
+}
+#background.t {
+  background-color: #FFE9EF;
+}
+#background.hr {
+  background-color: #A7DBD8;
+}
+#background.lr {
+  background-color: #69D2E7;
+}
+#background.s {
+  background-color: #50C8C6;
+}
+#background.hc {
+  background-color: #3FB8AF;
+}
+#background.lc {
+  background-color: #EBF2F2;
+}
+#background.c {
+  background-color: #F2F2F2;
+}
