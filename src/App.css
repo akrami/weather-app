@@ -48,3 +48,22 @@ div#cities {
     min-width: 50px;
     display: inline-block;
 }
+
+.weatherCity {
+    margin: 20px 0 0 20px;
+    padding: 10px;
+    color: white;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+.weatherDegree {
+    color: white;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 20px;
+    bottom: 150px;
+    font-weight: 900;
+    font-size: 6em;
+}

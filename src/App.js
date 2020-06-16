@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import CountUp from 'react-countup';
 import TextTransition, { presets } from "react-text-transition";
+import CrossfadeImage from "react-crossfade-image";
 
 class App extends React.Component {
   weathers = {
@@ -39,13 +40,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div id="background" className={this.state.cities[this.state.current].w}></div>
+        <div id="background" className={this.state.cities[this.state.current].w}><CrossfadeImage timingFunction={"ease-out"} style={{height: '100%', maxHeight: 'none', maxWidth: 'none'}} src={"/images/"+this.state.cities[this.state.current].w+".jpg"} /></div>
         <div className="weather-status">
           {/* <h1>{this.state.cities[this.state.current].name}</h1> */}
           {/* <h2>{this.state.cities[this.state.current].d}°C</h2> */}
-          <h1><TextTransition text={this.state.cities[this.state.current].name} springConfig={presets.molasses}/></h1>
-          <h2><CountUp end={this.state.cities[this.state.current].d} />°C</h2>
-          <h3>{this.weathers[this.state.cities[this.state.current].w]}</h3>
+          <h1><TextTransition text={this.state.cities[this.state.current].name} springConfig={presets.molasses} className="weatherCity" /></h1>
+          <h2 className="weatherDegree"><CountUp end={this.state.cities[this.state.current].d} />°C</h2>
+          {/* <h3>{this.weathers[this.state.cities[this.state.current].w]}</h3> */}
         </div>
 
         <div id="cities">
