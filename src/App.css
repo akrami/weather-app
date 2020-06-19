@@ -49,9 +49,14 @@ div#cities {
     display: inline-block;
 }
 
+.weatherDegreeWrapper { 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 .weatherCity {
-    margin: 20px 0 0 20px;
-    padding: 10px;
+    padding: 0;
     color: white;
     display: inline-block;
     font-weight: bolder;
@@ -66,4 +71,38 @@ div#cities {
     bottom: 150px;
     font-weight: 900;
     font-size: 6em;
+}
+
+.hidden {
+    display: none;
+}
+.addModal {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+.addModal div {
+    width: 60%;
+    margin: 150px auto;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 10px;
+}
+.addModal div input {
+    width: 90%;
+    margin: 0 auto 10px auto;
+    display: block;
+    line-height: 36px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+.addModal div input:focus {
+    outline: none;
 }
